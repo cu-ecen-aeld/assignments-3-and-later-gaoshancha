@@ -30,3 +30,4 @@ if [ $? -ne 0 ]; then
     echo "Error: Could not create file $write_file"
     exit 1
 fi
+

@@ -18,4 +18,3 @@ n_files=$(find "$filesdir" -type f | wc -l)
 n_lines=$(grep -r $searchstr $filesdir 2>/dev/null | wc -l) 
 echo "The number of files are $n_files and the number of matching lines are $n_lines"
 
-# add this comment line to perhaps re-trigger the github action???? 
