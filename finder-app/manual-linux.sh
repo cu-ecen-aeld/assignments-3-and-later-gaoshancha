@@ -82,7 +82,9 @@ mkdir -p rootfs/{bin,dev,etc,home,lib,lib64,proc,sbin,sys,tmp,usr,var}
 mkdir -p rootfs/usr/{bin,lib,sbin}
 mkdir -p rootfs/var/log
 
-tree -d ./rootfs
+# works on my system but not on the automated grader docker image
+#   --> Not needed, just nice debug output!
+#tree -d ./rootfs
 
 if [ -d "busybox" ]; then
     rm -rf ./busybox
