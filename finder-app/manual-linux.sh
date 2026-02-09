@@ -113,10 +113,10 @@ ${CROSS_COMPILE}readelf -a rootfs/bin/busybox | grep "Shared library"
 #cp /toolchain/arm-gnu-toolchain-13.3.rel1-x86_64-aarch64-none-linux-gnu/aarch64-none-linux-gnu/libc/lib64/libc.so.6 rootfs/lib64/
 # ... above works on my Ubuntu docker image ... but not in the autograder on my github action runner ... just add the files needed
 # ... not ideal but this build script is very complicated
-cp ../ld-linux-aarch64.so.1 rootfs/lib/
-cp ../libm.so.6 rootfs/lib64/
-cp ../libresolv.so.2 rootfs/lib64/
-cp ../libc.so.6 rootfs/lib64/
+cp ${FINDER_APP_DIR}/ld-linux-aarch64.so.1 ${OUTDIR}/rootfs/lib/
+cp ${FINDER_APP_DIR}/libm.so.6 ${OUTDIR}/rootfs/lib64/
+cp ${FINDER_APP_DIR}/libresolv.so.2 ${OUTDIR}/rootfs/lib64/
+cp ${FINDER_APP_DIR}/libc.so.6 ${OUTDIR}/rootfs/lib64/
 
 # Make device nodes
 mknod -m 0666 rootfs/dev/null c 1 3
