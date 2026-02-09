@@ -1,5 +1,5 @@
 CC := $(CROSS_COMPILE)gcc
-BINARY := $(CROSS_COMPILE)writer
+BINARY := writer
 
 all: writer
 
