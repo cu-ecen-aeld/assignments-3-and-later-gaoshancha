@@ -119,11 +119,11 @@ cp ${FINDER_APP_DIR}/libresolv.so.2 ${OUTDIR}/rootfs/lib64/
 cp ${FINDER_APP_DIR}/libc.so.6 ${OUTDIR}/rootfs/lib64/
 
 # Make device nodes
-mknod -m 0666 rootfs/dev/null c 1 3
-mknod -m 0600 rootfs/dev/console c 1 5
+mknod -m 0666 ${OUTDIR}/rootfs/dev/null c 1 3
+mknod -m 0600 ${OUTDIR}/rootfs/dev/console c 1 5
 
 # Clean and build the writer utility
-cd /kernel-build/assignments-3-and-later-gaoshancha/finder-app
+cd ${FINDER_APP_DIR}
 echo "Current working dir: `pwd`"
 make CROSS_COMPILE=${CROSS_COMPILE} clean
 make CROSS_COMPILE=${CROSS_COMPILE} all
